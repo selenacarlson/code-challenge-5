@@ -9,6 +9,14 @@
     <script src="scripts/client.js"></script>
 </head>
 <body ng-controller="MessageController as mc">
-    <h1>Messages</h1>
+    <h1>Full Stack Messaging</h1>
+    <input ng-model="mc.newMessage.name" type="text" placeholder="Name">
+    <input ng-model="mc.newMessage.text" type="text" placeholder="Message">
+    <button ng-click="mc.sendMessage(mc.newMessage)">Send</button>
+    <br>
+    <br>
+    <div ng-repeat="message in mc.messages.list">
+        "{{message.text}}" - {{message.name}}
+    </div>
 </body>
 </html>
